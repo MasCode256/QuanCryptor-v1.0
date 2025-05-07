@@ -1,0 +1,7 @@
+{
+  "external_password": "my_external_password",
+  "internal_password": "my_internal_password",
+  "ip": "0.0.0.0",
+  "key_size": 4096,
+  "port": 8000
+}
