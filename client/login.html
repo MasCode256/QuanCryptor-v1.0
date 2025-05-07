@@ -16,6 +16,7 @@
     <script src="QuanCryptor/api.js"></script>
     <script src="QuanCryptor/constants.js"></script>
     <script src="QuanCryptor/slashcode.js"></script>
+    <script src="QuanCryptor/functions.js"></script>
 
     <script defer src="QuanCryptor/login.js"></script>
   </head>
@@ -50,6 +51,22 @@
         <button id="connect-to-server" class="primary">Соединиться</button>
         <span id="result-0"></span>
       </div>
+    </div>
+    <div id="lr" class="center-y box hided size-0">
+      <h1>Регистрация / Вход</h1>
+      <span
+        >Введите никнейм (без пробелов и спецсимволов):
+        <input
+          type="text"
+          name="nickname"
+          id="nickname"
+          pattern="[A-Za-z0-9]{3,48}"
+          required
+      /></span>
+      <span class="hided" id="password-span"
+        >Введите пароль:
+        <input type="password" name="password" id="password" required
+      /></span>
     </div>
   </body>
 </html>
