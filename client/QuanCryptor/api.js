@@ -33,3 +33,18 @@ async function write_to_file(path, data) {
   const response = await pywebview.api.write_to_file(path, data);
   return response;
 }
+
+async function generate_key() {
+  const response = await pywebview.api.generate_key();
+  return response;
+}
+
+async function decrypt(key, msg) {
+  const response = await pywebview.api.decrypt(key, msg);
+  return response;
+}
+
+async function assymetric_encrypt(key, msg) {
+  const response = await pywebview.api.assymetric_encrypt(key, msg);
+  return response;
+}

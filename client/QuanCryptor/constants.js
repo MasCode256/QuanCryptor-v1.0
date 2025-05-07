@@ -1,2 +1,2 @@
 const SECOND = 1000;
-const DELAY = 1 * SECOND;
+const DELAY = 3 * SECOND;

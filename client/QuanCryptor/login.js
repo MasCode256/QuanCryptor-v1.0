@@ -5,6 +5,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "internal-server-password"
   );
   const server_handshake_result = document.getElementById("result-0");
+  const password_input = document.getElementById("password");
+  const nickname_input = document.getElementById("nickname");
+
+  var server = {
+    url: "",
+    public_key: "",
+    internal_password: "",
+    external_password: "",
+    protocol: "http",
+  };
 
   connect_to_server_button.addEventListener("click", async () => {
     try {
@@ -47,17 +57,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     `Хэш внутреннего пароля успешно получен.`
                   );
 
+                  server = {
+                    url: server_data["url"],
+                    public_key: public_key,
+                    internal_password: internal_server_password_input.value,
+                    external_password: "",
+                    protocol: "http",
+                  };
+
                   const response = await write_to_file(
                     `./data/servers/${server_data["url"].replace(
                       ":",
                       "."
                     )}.json`,
-                    JSON.stringify({
-                      url: server_data["url"],
-                      public_key: public_key,
-                      internal_password: internal_server_password_input.value,
-                      external_password: "",
-                    })
+                    JSON.stringify(server)
                   );
 
                   if (response == true) {
@@ -65,6 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
                       { color: "var(--success)" },
                       `Данные сервера сохранены.`
                     );
+
+                    document.getElementById("lr").classList.remove("hided");
                   } else {
                     TransparentCSS.log(
                       { color: "var(--error)" },
@@ -109,5 +124,26 @@ document.addEventListener("DOMContentLoaded", () => {
         `JavaScript error: error handshaking with server: ${error}`
       );
     }
+  });
+
+  let timeout_0 = 0;
+  nickname_input.addEventListener("input", () => {
+    clearTimeout(timeout_0);
+    timeout_0 = setTimeout(async () => {
+      let url = `${server.protocol}://${server.url}/is_account_exists`;
+      try {
+        const responce = await QCFetch(
+          url,
+          { nickname: nickname_input.value },
+          server.public_key
+        );
+        TransparentCSS.log({}, `Result: ${responce}`);
+      } catch (error) {
+        TransparentCSS.log(
+          { color: "var(--error)" },
+          `Ошибка при проверке существования аккаунта: ${error}`
+        );
+      }
+    }, 1500);
   });
 });
