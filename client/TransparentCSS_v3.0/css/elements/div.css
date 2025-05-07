@@ -1,0 +1,26 @@
+body,
+div {
+  &.center-x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.center-y {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+div {
+  &.box {
+    background: var(--transparent-0);
+    border-radius: var(--div-border-radius);
+    backdrop-filter: var(--backdrop-filter);
+  }
+
+  &.margin-top {
+    margin-top: 12.8vh;
+  }
+}

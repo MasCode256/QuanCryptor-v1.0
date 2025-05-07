@@ -1,0 +1,12 @@
+.element-description {
+  position: absolute;
+
+  top: var(--mouse-y);
+  left: calc(var(--mouse-x) + 8px + 0.2vw);
+
+  opacity: 1;
+
+  transition: top 0s, left 0s, opacity var(--tt) ease-in-out;
+
+  font-size: calc(var(--font-size) * 0.85);
+}

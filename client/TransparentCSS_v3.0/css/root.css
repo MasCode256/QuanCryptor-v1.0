@@ -1,0 +1,63 @@
+:root {
+  --ff: "Tektur", "Space-Mono", Consolas;
+  --ff0: "Tektur", Consolas;
+  --ff1: "Space-Mono", Consolas;
+  --ff2: "Digital", Consolas;
+  --ff3: Consolas;
+
+  --secondary: rgba(255, 255, 255, 0.6);
+  --primary: #0f5;
+  --success: #0f0;
+  --process: #ff0;
+  --warning: #fb0;
+  --error: #f00;
+
+  --text-color: #fff;
+  --background: #000;
+
+  ---luminance: 160;
+  ---opacity: 0.1;
+
+  --transparent-0: rgba(
+    var(---luminance),
+    var(---luminance),
+    var(---luminance),
+    var(---opacity)
+  );
+  --transparent-1: rgba(
+    var(---luminance),
+    var(---luminance),
+    var(---luminance),
+    calc(var(---opacity) * 2)
+  );
+
+  --padding-x: calc(1.2vw + 5px);
+  --padding-y: calc(0.25vh + 3px);
+
+  --margin: calc(0.2vw + 0.2vh + 2px);
+
+  --padding-x-hover: calc(1.6vw + 8px);
+
+  --border-radius: 50px;
+  --div-border-radius: 5px;
+
+  --font-size: calc(0.8vw + 0.8vh + 5px);
+
+  --tt: 0.3s;
+  --document-displaying-animation-time: 2s;
+
+  --transition: all var(--tt) ease-in-out;
+  --long-transition: all calc(var(--tt) * 3.5) ease-in-out;
+  --transition-delay: 1ms;
+
+  --backdrop-filter: blur(2px);
+
+  --text-shadow: 0 0 32px var(--background), 0 0 24px var(--background),
+    0 0 16px var(--background), 0 0 8px var(--background),
+    0 0 4px var(--background);
+  --small-text-shadow: 0 0 16px var(--background), 0 0 8px var(--background),
+    0 0 4px var(--background);
+
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+}

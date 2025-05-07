@@ -1,0 +1,76 @@
+input[type="text"],
+input[type="password"] {
+  ---width: calc(12vw + 12% + 1vh + 12px);
+  ---padding-x: var(--padding-x);
+  ---padding-y: var(--padding-y);
+  ---shadow-size: 3px;
+  ---font-family: var(--ff1);
+
+  background: var(--transparent-0);
+  backdrop-filter: var(--backdrop-filter);
+
+  padding-left: var(---padding-x);
+  padding-right: var(---padding-x);
+  padding-top: var(---padding-y);
+  padding-bottom: var(---padding-y);
+
+  border-radius: var(--border-radius);
+  border: none;
+
+  width: var(---width);
+
+  outline: none;
+
+  text-shadow: 0 0 var(---shadow-size) var(--background);
+  font-family: var(---font-family);
+
+  &:hover {
+    width: calc(var(---width) * 1.05);
+    ---padding-x: var(--padding-x-hover);
+  }
+
+  &:focus {
+    width: calc(var(---width) * 1.05);
+    ---padding-x: var(--padding-x-hover);
+  }
+
+  &:hover:focus,
+  &:focus:hover {
+    width: calc(var(---width) * 1.1);
+    ---padding-x: var(--padding-x-hover);
+  }
+
+  &::placeholder {
+    color: var(--secondary);
+    text-shadow: 0 0 var(---shadow-size) var(--background);
+    text-align: center;
+    font-family: var(---font-family);
+  }
+
+  &.wide {
+    ---width: calc(32vw + 32% + 3.2vh + 32px);
+  }
+
+  &.fa {
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+
+    &::placeholder {
+      font-family: var(---font-family), FontAwesome;
+    }
+
+    &:placeholder-shown {
+      font-family: var(---font-family);
+    }
+  }
+
+  &.required {
+    border: 1px solid rgba(255, 255, 255, 0);
+
+    &:placeholder-shown {
+      box-shadow: 0 0 16px var(--error);
+      border-color: var(--error);
+    }
+  }
+}

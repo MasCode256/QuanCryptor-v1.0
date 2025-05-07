@@ -1,0 +1,26 @@
+#_background_overlapper {
+  ---alpha: 0.1;
+
+  background: rgba(0, 0, 0, var(---alpha));
+
+  opacity: 1;
+  mix-blend-mode: normal;
+
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  overflow: hidden;
+
+  padding: 0;
+  margin: 0;
+
+  pointer-events: none;
+
+  transition: none;
+
+  z-index: 1;
+}

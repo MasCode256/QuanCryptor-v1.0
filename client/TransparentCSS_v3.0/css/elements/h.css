@@ -1,0 +1,28 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff0);
+}
+
+h1 {
+  font-size: calc(12px + var(--font-size));
+}
+
+h2 {
+  font-size: calc(9px + var(--font-size));
+}
+
+h3 {
+  font-size: calc(6px + var(--font-size));
+}
+
+h4 {
+  font-size: calc(3px + var(--font-size));
+}
+
+h5 {
+  font-size: calc(1px + var(--font-size));
+}

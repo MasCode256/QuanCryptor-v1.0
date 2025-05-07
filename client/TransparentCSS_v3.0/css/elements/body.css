@@ -1,0 +1,48 @@
+body {
+  background: var(--background);
+  color: var(--text-color);
+
+  background-repeat: no-repeat; /* Не повторять изображение */
+  background-position: center; /* Центрировать изображение */
+  background-size: cover; /* Покрыть весь контейнер */
+  background-attachment: fixed;
+
+  font-family: var(--ff1);
+
+  transition: all var(--document-displaying-animation-time) ease-in-out;
+
+  & {
+    & * {
+      opacity: 0;
+      pointer-events: none;
+
+      &.always-visible {
+        opacity: 1;
+      }
+    }
+
+    &.animated {
+      & * {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    overflow: hidden;
+  }
+
+  & * {
+    color: var(--text-color);
+    font-size: var(--font-size);
+    text-shadow: var(--text-shadow);
+
+    transition: var(--transition);
+
+    margin: var(--margin);
+
+    position: relative;
+    z-index: 3;
+  }
+
+  z-index: 0;
+}

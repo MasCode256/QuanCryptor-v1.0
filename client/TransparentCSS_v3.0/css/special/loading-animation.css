@@ -1,0 +1,22 @@
+#loading-animation {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+  transition: var(--long-transition);
+
+  background: var(--background);
+
+  &.animated {
+    opacity: 0;
+
+    /*width: 0;
+    height: 0;*/
+  }
+}

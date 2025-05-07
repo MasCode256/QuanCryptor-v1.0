@@ -1,0 +1,16 @@
+a {
+  ---color: var(--primary);
+  ---letter-spacing: 1px;
+
+  color: var(---color);
+  letter-spacing: var(---letter-spacing);
+
+  &:hover {
+    letter-spacing: calc(var(---letter-spacing) * 2);
+    text-shadow: 0 0 12px var(---color);
+  }
+
+  &.secondary {
+    ---color: var(--secondary);
+  }
+}
